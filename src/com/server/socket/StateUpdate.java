@@ -1,5 +1,7 @@
 package com.server.socket;
 
+import java.io.BufferedReader;
+
 /**
  * Created by Igor on 22.02.2017.
  */
@@ -9,4 +11,6 @@ public class StateUpdate implements State {
 
         return command;
     }
+
+
 }

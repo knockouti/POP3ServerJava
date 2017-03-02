@@ -1,13 +1,16 @@
 package com.server.socket;
 
+import java.io.BufferedReader;
+
 /**
  * Created by Igor on 23.02.2017.
  */
-public class StateOption  {
+public class StateOption {
 
 
     private State currentState;
     boolean runnable = true;
+
     public StateOption() {
         setState(new StateAuthorization());
     }
@@ -17,8 +20,10 @@ public class StateOption  {
     }
 
 
-    public String parseCommand(String command) {
-        return this.currentState.parseCommand(this, command);
+    public String parseCommand(String string) {
+
+        return this.currentState.parseCommand(this, string);
+
     }
 
     public Boolean isRunnable() {

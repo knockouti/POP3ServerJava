@@ -6,9 +6,10 @@ import java.awt.*;
 /**
  * Created by Igor on 23.02.2017.
  */
-public class GUIPop3Server {
-    private JFrame mainFrame;
+public class GUIPop3Server extends JFrame {
+
     private TextArea textArea;
+
     public TextArea getTextArea() {
         return textArea;
     }
@@ -18,17 +19,16 @@ public class GUIPop3Server {
     }
 
 
-
-    public GUIPop3Server(){
-        mainFrame = new JFrame("POP3Server");
-        mainFrame.setSize(new Dimension(500,300));
-        mainFrame.setLayout(new FlowLayout());
-        mainFrame.setVisible(true);
-        mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        mainFrame.setLocationRelativeTo(null);
+    public GUIPop3Server() {
+        this.setTitle("POP3Server");
+        this.setSize(new Dimension(500, 300));
+        this.setLayout(new FlowLayout());
+        this.setVisible(true);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
         textArea = new TextArea();
-        textArea.setSize(new Dimension(200,200));
-        mainFrame.getContentPane().add(textArea);
+        textArea.setSize(new Dimension(400, 250));
+        this.getContentPane().add(textArea);
     }
 
 }
