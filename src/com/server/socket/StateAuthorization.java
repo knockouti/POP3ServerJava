@@ -1,6 +1,5 @@
 package com.server.socket;
 
-import java.io.BufferedReader;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,8 +26,8 @@ public class StateAuthorization extends AbstractState implements State {
         addValidCommand("auth");
         addValidCommand("user");
         addValidCommand("pass");
-        addValidCommand("capa");
-        addValidCommand("quit");
+
+
         this.validUsers.put("ihar.yermachonak@gmail.com", "5win3se7enrus2");
         this.validUsers.put("igor@mail.local", "199661");
 
@@ -72,7 +71,7 @@ public class StateAuthorization extends AbstractState implements State {
                     }
                 } else if (s.equals("quit")) {
                     response = OK + "Server closing connection" + CRLF;
-                    closeConnection(stateContext);
+                    endAuthorization(stateContext);
                 } else {
                     response = ERR + "Unknown command" + CRLF;
                 }
@@ -105,7 +104,7 @@ public class StateAuthorization extends AbstractState implements State {
         }
     }
 
-    private void closeConnection(StateOption stateOption) {
+    private void endAuthorization(StateOption stateOption) {
         stateOption.setRunnable(false);
     }
 }
